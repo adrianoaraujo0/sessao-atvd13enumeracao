@@ -61,6 +61,9 @@ public class Program {
 		System.out.print("Order moment: " + sdf.format(order.getMoment()) + "\n");
 		System.out.print("Order status: " + order.getOrder() + "\n");
 		System.out.print("Client: " + order.getClient());
+		System.out.println("Order items: ");
+		System.out.println();
+		
 
 	}
 

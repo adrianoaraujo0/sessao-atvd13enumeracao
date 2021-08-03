@@ -41,10 +41,13 @@ public class OrderItem {
 		this.product = product;
 	}
 
-	
-	
 	public Double subTotal() {
 		return quantity * price;
+	}
+
+	@Override
+	public String toString() {
+		return product.getName() + ", $" + product.getPrice() + ", Quantity: " + quantity + ", Subtotal: " + subTotal();
 	}
 
 }
