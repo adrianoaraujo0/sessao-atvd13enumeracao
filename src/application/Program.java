@@ -43,13 +43,15 @@ public class Program {
 		String productName;
 		Double productPrice;
 		int quantity;
+
 		for (int i = 0; i < n; i++) {
-			System.out.println("Enter #" + (i + 1) + "item data: ");
+			System.out.println("Enter #" + (i + 1) + " item data: ");
 			System.out.print("Product name: ");
+			sc.nextLine();
 			productName = sc.nextLine();
-			System.out.println("Product price: ");
+			System.out.print("Product price: ");
 			productPrice = sc.nextDouble();
-			System.out.println("Quantity: ");
+			System.out.print("Quantity: ");
 			quantity = sc.nextInt();
 
 			Product p = new Product(productName, productPrice);
@@ -57,13 +59,19 @@ public class Program {
 			order.addItem(orderitem);
 		}
 
+		System.out.println();
 		System.out.println("ORDER SUMMARY: ");
 		System.out.print("Order moment: " + sdf.format(order.getMoment()) + "\n");
 		System.out.print("Order status: " + order.getOrder() + "\n");
-		System.out.print("Client: " + order.getClient());
+		System.out.print("Client: " + order.getClient() + "\n");
+
 		System.out.println("Order items: ");
-		System.out.println();
-		
+		for (OrderItem show : order.getItems()) {
+			System.out.println(show);
+		}
+
+		System.out.println("Total price: ");
+		System.out.println(order);
 
 	}
 

@@ -13,6 +13,7 @@ public class Order {
 
 	private Client client;
 	private List<OrderItem> items = new ArrayList<>();
+	private OrderItem orderitem;
 
 	public Order() {
 
@@ -25,7 +26,7 @@ public class Order {
 		this.client = client;
 	}
 
-	//----------------------------------
+	// ----------------------------------
 	public Date getMoment() {
 		return moment;
 	}
@@ -54,8 +55,7 @@ public class Order {
 		return items;
 	}
 
-	
-	//---------------------------------
+	// ---------------------------------
 	public void addItem(OrderItem item) {
 		items.add(item);
 	}
@@ -63,10 +63,16 @@ public class Order {
 	public void removeItem(OrderItem item) {
 		items.add(item);
 	}
-	
-	/*public Double Total() {
-		return 
-	}*/
+
+	public Double Total() {
+		double total = 0;
+		return total += orderitem.subTotal();
+	}
+
+	@Override
+	public String toString() {
+		return "Total" + Total();
+	}
 	
 	
 
